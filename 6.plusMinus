@@ -1,0 +1,21 @@
+void plusMinus(vector<int> arr) {
+    int pos = 0;
+    int neg = 0;
+    int zero = 0;
+    float sz = arr.size();
+    for (auto i = arr.begin(); i<arr.end(); i++) {
+        if (*i >0) {
+           pos +=1; 
+        } 
+        else if (*i <0) {
+            neg +=1;            
+        }
+        else {
+            zero +=1;   
+        }
+    }
+    cout << pos/(sz) << endl;
+    cout << neg/(sz) << endl;
+    cout << zero/(sz) << endl;
+
+}
