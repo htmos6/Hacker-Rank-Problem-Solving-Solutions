@@ -1,7 +1,7 @@
 int sockMerchant(int n, vector<int> ar) {
 
-    vector <int> socks(100, 0); 
-    
+    vector <int> socks; 
+    socks.assign(100,0);
     int ct = 0;
     
     for (int i = 0; i < ar.size() ; i++) {
