@@ -1,0 +1,59 @@
+static int cur_id_prof = 1;
+static int cur_id_student = 1;
+
+class Person{
+public:
+    int age;  
+    int id;
+    string name;
+    
+    virtual void getdata() = 0;
+    virtual void putdata() = 0;
+};
+
+class Professor: public Person {
+public:
+    int publications;
+    
+    void getdata();
+    void putdata();
+     
+};
+
+class Student: public Person {
+public:
+    int mark;
+    int sum_marks = 0;
+    
+    void getdata();
+    void putdata();
+};
+
+
+void Student::getdata()
+{
+    std::cin >> name >> age;
+    for(int i = 0; i<= 5; i++) 
+    {
+        (cin >> mark);
+        sum_marks += mark;
+    }
+    id = cur_id_student++;
+} 
+
+void Student::putdata()
+{
+    std::cout << name << " " << age << " " << sum_marks << " " << id << std::endl;
+} 
+
+void Professor::getdata()
+{
+    std::cin >> name >> age >> publications;
+    id = cur_id_prof++;
+    
+}
+
+void Professor::putdata()
+{
+    std::cout << name << " " << age << " " << publications << " " << id << std::endl;
+}
